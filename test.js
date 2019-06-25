@@ -65,3 +65,25 @@ test('   mark todo item ', function(t){
  t.end();
 
 })
+
+
+test('sortTodos', function(t) {
+  var a = [ 
+    { id: -1, description: 'third todo', done:true },
+    { id: -2, description: 'second todo', done:true },
+    { id:  0, description: 'zero todo', done:false },
+  ];
+  var v=logic.sortTodos(a,function(a, b){return a['description'] > b['description']});
+  var b = [ 
+    
+    { id: -2, description: 'second todo', done:true },
+    { id: -1, description: 'third todo', done:true },
+    { id:  0, description: 'zero todo' , done:false},
+  ];
+ console.log(a[0]['description']+"\n");
+  console.log(b[0]['description']+"\n");
+  console.log(v[0]['description']+"\n");
+  t.deepEqual(v,b,"33333333333sortTodos");  
+ 
+  t.end();
+});

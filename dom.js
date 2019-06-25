@@ -80,6 +80,7 @@ event.target
 
 
     state.forEach(function(todo) {
+      if(todo.done== false)
       todoListNode.appendChild(createTodoNode(todo));
     });
 

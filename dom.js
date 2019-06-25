@@ -1,26 +1,32 @@
 // part 2 linking it all together
 // The function here is called an iife,
 // it keeps everything inside hidden from the rest of our application
-(function() {
+(
+  function() {
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'first todo' ,done:false},
+    { id: -2, description: 'second todo' ,done:true},
+    { id: -1, description: 'third todo',done:false }
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
-  var createTodoNode = function(todo) {
+  var createTodoNode = function(todo) { 
+    console.log(todo['done']);
+ 
     var todoNode = document.createElement('li');
+    todoNode.innerHTML=todo.description;
+
     // you will need to use addEventListener
 
     // add span holding description
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.innerHTML='deleteButton'; 
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -28,10 +34,17 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
+    var markTodoButtonNode = document.createElement('button');
+    markTodoButtonNode.innerHTML='markTodo'; 
+    markTodoButtonNode.addEventListener('click', function(event) {
+      var newState = todoFunctions.markTodo(state, todo.id);
+      update(newState);
+    });
+    todoNode.appendChild(markTodoButtonNode);
 
     // add classes for css
 
-    return todoNode;
+    return todoNode; 
   };
 
   // bind create todo form
@@ -41,10 +54,16 @@
       // what does event.preventDefault do?
       // what is inside event.target?
 
-      var description = '?'; // event.target ....
-
-      // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      //var description = '?'; //  ....
+      event.preventDefault();
+  var  desc=  document.getElementById('todo').value;
+event.target
+     // hint: todoFunctions.addTodo
+     
+      // var newState = []; // ?? change this!
+      // update(newState);
+      var newState = todoFunctions.addTodo(state, {id:todoFunctions.generateId(), description:desc,done:false});
+      console.log(newState);
       update(newState);
     });
   }
@@ -58,6 +77,7 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement('ul');
+
 
     state.forEach(function(todo) {
       todoListNode.appendChild(createTodoNode(todo));

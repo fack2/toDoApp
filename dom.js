@@ -6,6 +6,7 @@
   var container = document.getElementById("todo-container");
   var container2 = document.getElementById("markTodo-container");
   var addTodoForm = document.getElementById("add-todo");
+  var sortList = document.getElementById("sortList");
 
   var state = [
     { id: -3, description: "first todo", done: false },
@@ -49,7 +50,18 @@
 
     return todoNode;
   };
+  sortList.addEventListener("click", function(event) {
+    event.preventDefault();
+    // var sortFunction=
+     var newState=todoFunctions.sortTodos(state,function(a, b){return (a['description']>b['description']?1:-1)});
+     update(newState);
 
+    // console.log(ll);
+    // console.log(state[0]['description']+"000"+ll[0]['description']);
+    // console.log(state[0]['description']<ll[1]['description']);
+    // console.log(state);
+
+  });
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {

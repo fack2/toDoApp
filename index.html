@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <html lang="en">
+          <meta name="description" content="ToDo List."/>
     <meta charset="utf-8" />
     <title>add todo</title>
     <link rel="stylesheet" href="./style.css" />
@@ -14,10 +16,10 @@
   <body>
     <header></header>
     <form id="add-todo" class="addbut">
-      <input type="text" name="description" id="todo" value="" />
-      <button
+      <label for="todo">ToDoList <input placeholder="Add your task" type="text" name="description" id="todo" value="" /></label>
+      <button aria-label="add"
         type="submit"
-        name=""
+        name="add"
         value="ADD"
         id="add"
         class="fas fa-plus-circle"
@@ -26,8 +28,8 @@
       <!-- <button id="sortList" >Sort By Description</button> -->
     </form>
     <div class="div1">
-      <button id="sortList" class="sort">Sort By Description</button>
-      <button id="sortListID" class="sort">Sort By ID</button>
+      <button aria-label="add" id="sortList" class="sort" name="sort">Sort By Description</button>
+      <button aria-label="add" id="sortListID" class="sort" name="sort2">Sort By ID</button>
     </div>
 
     <h1 class="head">To Do List</h1>

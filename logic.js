@@ -76,7 +76,13 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sorta
     var arr =this.cloneArrayOfObjects(todos);
+    // function strcmp(a, b)
+    // {   
+    // return (a<b?-1:(a>b?1:0));  
+    // }
     arr.sort(sortFunction);
+
+    // arr.sort(function(a, b){return strcmp(a['description'],b['description'])});
     return arr ;
 
   },

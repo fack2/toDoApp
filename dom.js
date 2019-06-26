@@ -9,8 +9,8 @@
   var sortList = document.getElementById("sortList");
 
   var state = [
-    { id: -2, description: "second todo", done: true },
     { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: true },
     { id: -1, description: "third todo", done: false }
   ]; // this is our initial todoList
 

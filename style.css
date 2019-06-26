@@ -1,7 +1,9 @@
 button {
-  height: 30px;
+  height: 40px;
   margin-bottom: 10px;
   margin-right: 10px;
+  float: right;
+  width: 130px;
 }
 header {
   background-image: url("https://previews.123rf.com/images/tortoon/tortoon1611/tortoon161100090/65878421-business-concept-top-view-notebook-writing-2017-to-do-list-pen-coffee-cup-and-phone-on-wood-table-.jpg");
@@ -11,13 +13,38 @@ header {
   /* width: 100%;
   z-index: 0; */
 }
-body {
+html {
   border: 2px solid gray;
   box-shadow: 0px 0px 3px 3px #bf8040;
   margin: 10px;
   padding: 10px;
-  height: 200%;
 }
+li {
+  margin-bottom: 40px;
+}
+form {
+  margin-top: 10px;
+  margin-left: 25%;
+}
+/* input {
+  width: 500px;
+} */
+#todo {
+  width: 300px;
+  height: 50px;
+}
+#add {
+  width: 100px;
+  height: 45px;
+  font-size: 25px;
+  border-radius: 5px;
+}
+
+span {
+  width: 200px;
+  /* margin-right: 10px; */
+}
+
 div {
   width: 49%;
   display: inline-block;

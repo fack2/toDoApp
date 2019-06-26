@@ -30,8 +30,9 @@
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
     // deleteButtonNode.innerHTML = "Delete";
-
+    deleteButtonNode.name="deleteButton";
     deleteButtonNode.className = "far fa-trash-alt";
+    deleteButtonNode.setAttribute("aria-label","eshi")
     deleteButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -40,6 +41,9 @@
 
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
+    markTodoButtonNode.name="markTodoButton"
+    markTodoButtonNode.setAttribute("aria-label","eshi")
+
     if (todo["done"] == false) {
       //  markTodoButtonNode.innerHTML = "markTodo";
       markTodoButtonNode.className = "	fa fa-check-square";

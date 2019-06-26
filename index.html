@@ -15,24 +15,26 @@
     <header></header>
     <form id="add-todo" class="addbut">
       <input type="text" name="description" id="todo" value="" />
-      <input
+      <button
         type="submit"
         name=""
         value="ADD"
-        class="fas fa-plus-circle"
         id="add"
-      />
+        class="fas fa-plus-circle"
+      ></button>
+
       <!-- <button id="sortList" >Sort By Description</button> -->
     </form>
-    <form>
-      <input type="submit" name="" value="Sort By Description" id="sortList" />
-
-    </form>
+    <div class="div1">
+      <button id="sortList" class="sort">Sort By Description</button>
+      <button id="sortListID" class="sort">Sort By ID</button>
+    </div>
 
     <h1 class="head">To Do List</h1>
     <h1 class="head">Mark List</h1>
+
     <section>
-      <div id="todo-container" class="todocontainer"><ul></ul></div>
+      <div id="todo-container" class="todocontainer "><ul></ul></div>
       <div id="markTodo-container" class="markTodocontainer"><ul></ul></div>
     </section>
     <!-- <h2>hhhh</h2> -->

@@ -1,5 +1,35 @@
-button{ 
-    height: 30px;
-    margin-bottom: 10px; 
-    margin-right: 10px;
+button {
+  height: 30px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+header {
+  background-image: url("https://previews.123rf.com/images/tortoon/tortoon1611/tortoon161100090/65878421-business-concept-top-view-notebook-writing-2017-to-do-list-pen-coffee-cup-and-phone-on-wood-table-.jpg");
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 100%;
+  z-index: 0; */
+}
+body {
+  border: 2px solid gray;
+  box-shadow: 0px 0px 3px 3px #bf8040;
+  margin: 10px;
+  padding: 10px;
+  height: 200%;
+}
+div {
+  width: 49%;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.markTodocontainer {
+  float: right;
+}
+
+.head {
+  margin: 2%;
+  width: 45%;
+  display: inline-block;
 }

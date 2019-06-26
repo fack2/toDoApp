@@ -5,6 +5,7 @@
   function() {
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
+  var container2 = document.getElementById('markTodo-container');
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
@@ -18,7 +19,8 @@
     console.log(todo['done']);
  
     var todoNode = document.createElement('li');
-    todoNode.innerHTML=todo.description;
+    todoNode.innerHTML="<span>"+todo.description+"</span>";
+    // todoNode.innerHTML=todo.description;
 
     // you will need to use addEventListener
 
@@ -77,16 +79,21 @@ event.target
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement('ul');
-
+    var markedListNode = document.createElement('ul');
 
     state.forEach(function(todo) {
       if(todo.done== false)
       todoListNode.appendChild(createTodoNode(todo));
+      else
+      markedListNode.appendChild(createTodoNode(todo));
+
     });
 
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
+    container2.replaceChild(markedListNode, container2.firstChild);
   };
 
   if (container) renderState(state);
+  if (container2) renderState(state);
 })();

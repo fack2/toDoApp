@@ -1,9 +1,23 @@
 button {
-  height: 40px;
+  height: 50px;
   margin-bottom: 10px;
   margin-right: 10px;
   float: right;
-  width: 130px;
+  width: 50px;
+  color: #fff !important;
+  text-transform: uppercase;
+  background: #484f4f;
+  border-radius: 50px;
+  display: inline-block;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+button:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
 header {
   background-image: url("https://previews.123rf.com/images/tortoon/tortoon1611/tortoon161100090/65878421-business-concept-top-view-notebook-writing-2017-to-do-list-pen-coffee-cup-and-phone-on-wood-table-.jpg");
@@ -14,6 +28,7 @@ header {
   z-index: 0; */
 }
 html {
+  background-color: #f0efef;
   border: 2px solid gray;
   box-shadow: 0px 0px 3px 3px #bf8040;
   margin: 10px;
@@ -43,20 +58,37 @@ form {
 span {
   width: 200px;
   /* margin-right: 10px; */
+  font-size: 25px;
+  font-weight: bold;
 }
 
 div {
+  box-sizing: inherit;
+
   width: 49%;
   display: inline-block;
   border: 2px solid black;
+  height: 500px;
 }
 
 .markTodocontainer {
   float: right;
+  background-color: #b1cbbb;
+}
+.todocontainer {
+  background-color: #deeaee;
 }
 
 .head {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #ccccb3; /* Safari */
+  text-decoration-color: #ccccb3;
+  font-size: 50px;
   margin: 2%;
   width: 45%;
+  color: #484f4f;
   display: inline-block;
+  text-shadow: 2px 2px 8px #92a8d1;
+  margin-top: 57px;
+  margin-bottom: 18px;
 }

@@ -28,7 +28,9 @@
 
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
-    deleteButtonNode.innerHTML = "deleteButton";
+    // deleteButtonNode.innerHTML = "Delete";
+
+    deleteButtonNode.className = "far fa-trash-alt";
     deleteButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -38,8 +40,12 @@
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
     if (todo["done"] == false) {
-      markTodoButtonNode.innerHTML = "markTodo";
-    } else markTodoButtonNode.innerHTML = "Unmark";
+      //  markTodoButtonNode.innerHTML = "markTodo";
+      markTodoButtonNode.className = "	fa fa-check-square";
+    } else {
+      //  markTodoButtonNode.innerHTML = "Unmark";
+      markTodoButtonNode.className = "fa fa-minus-square";
+    }
     markTodoButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);

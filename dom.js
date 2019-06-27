@@ -36,7 +36,7 @@
     // deleteButtonNode.innerHTML = "Delete";
     deleteButtonNode.name = "deleteButton";
     deleteButtonNode.className = "far fa-trash-alt";
-    deleteButtonNode.setAttribute("aria-label", "eshi");
+    deleteButtonNode.setAttribute("aria-label", "delete Button");
     deleteButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);

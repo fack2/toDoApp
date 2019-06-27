@@ -73,8 +73,8 @@ label{
   height: 56px;
   font-size: 25px;
   border-radius: 5px;
-  /* float: left; */
-  margin-right: 55%;
+   float: none; 
+  //margin-right: 55%;
 }
 
 span {

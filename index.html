@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html  lang="en">
+     
+
   <head>
-      <meta lang="en">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta name="description" content="ToDo List."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ToDo List." />
     <meta charset="utf-8" />
     <title>add todo</title>
     <link rel="stylesheet" href="./style.css" />
@@ -17,19 +18,32 @@
   <body>
     <header></header>
     <form id="add-todo" class="addbut">
-      <label for="todo">ToDoList <input placeholder="Add your task" type="text" name="description" id="todo"  class="todo" value="" /></label>
-      <button aria-label="add"
+      <label for="todo"
+        >ToDoList
+        <input
+          placeholder="Add your task"
+          type="text"
+          name="description"
+          id="todo"
+          class="todo"
+          value=""
+      /></label>
+      <button
+        aria-label="add"
         type="submit"
         name="add"
         value="ADD"
         id="add"
         class="fas fa-plus-circle add"
       ></button>
-
     </form>
     <div class="sort-buttons">
-      <button aria-label="add" id="sortList" class="sort" name="sort">Sort By Description</button>
-      <button aria-label="add" id="sortListID" class="sort" name="sort2">Sort By ID</button>
+      <button aria-label="add" id="sortList" class="sort" name="sort">
+        Sort By Description
+      </button>
+      <button aria-label="add" id="sortListID" class="sort" name="sort2">
+        Sort By ID
+      </button>
     </div>
 
     <h1 class="head">To Do List</h1>
@@ -39,7 +53,6 @@
       <div id="todo-container" class="todocontainer "><ul></ul></div>
       <div id="markTodo-container" class="markTodocontainer"><ul></ul></div>
     </section>
-   
   </body>
   <script type="text/javascript" src="./logic.js"></script>
   <script type="text/javascript" src="./dom.js"></script>

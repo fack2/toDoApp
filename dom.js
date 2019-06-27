@@ -4,7 +4,7 @@
 (function() {
   // This is the dom node where we will keep our todo
   var uncompletedToDos = document.getElementById("todo-container");
-  var completedToDos= document.getElementById("markTodo-container");
+  var completedToDos = document.getElementById("markTodo-container");
   var addTodoForm = document.getElementById("add-todo");
   var sortList = document.getElementById("sortList");
   var sortListID = document.getElementById("sortListID");
@@ -21,8 +21,8 @@
 
     var todoNode = document.createElement("li");
     //todoNode.innerHTML = "<span>" + todo.description + "</span>";
-    var spannode = document.createElement("span"); 
-    spannode.textContent=todo.description;
+    var spannode = document.createElement("span");
+    spannode.textContent = todo.description;
     todoNode.appendChild(spannode);
 
     // todoNode.innerHTML=todo.description;
@@ -34,9 +34,9 @@
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
     // deleteButtonNode.innerHTML = "Delete";
-    deleteButtonNode.name="deleteButton";
+    deleteButtonNode.name = "deleteButton";
     deleteButtonNode.className = "far fa-trash-alt";
-    deleteButtonNode.setAttribute("aria-label","eshi")
+    deleteButtonNode.setAttribute("aria-label", "eshi");
     deleteButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -45,8 +45,8 @@
 
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
-    markTodoButtonNode.name="markTodoButton"
-    markTodoButtonNode.setAttribute("aria-label","mark Todo Button")
+    markTodoButtonNode.name = "markTodoButton";
+    markTodoButtonNode.setAttribute("aria-label", "mark Todo Button");
 
     if (todo["done"] == false) {
       //  markTodoButtonNode.innerHTML = "markTodo";
@@ -72,10 +72,7 @@
       return a["description"] > b["description"] ? 1 : -1;
     });
 
-    
     update(newState);
-
-   
   });
 
   sortListID.addEventListener("click", function(event) {
@@ -86,25 +83,23 @@
     });
 
     update(newState);
-
-    
   });
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
-    
       event.preventDefault();
       var desc = document.getElementById("todo").value;
-      if(desc != '')
-     { event.target;
-     
-      var newState = todoFunctions.addTodo(state, {
-        id: todoFunctions.generateId(),
-        description: desc,
-        done: false
-      });
-      console.log(newState);
-      update(newState); }
+      if (desc != "") {
+        event.target;
+
+        var newState = todoFunctions.addTodo(state, {
+          id: todoFunctions.generateId(),
+          description: desc,
+          done: false
+        });
+        console.log(newState);
+        update(newState);
+      }
     });
   }
 

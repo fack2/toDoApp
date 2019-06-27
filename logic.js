@@ -36,37 +36,28 @@ var todoFunctions = {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
-    var arr =this.cloneArrayOfObjects(todos);
-    var i=0 ;
-    var a=[];
-    for(i;i<arr.length ;++i)
-    { if(arr[i]['id']!=idToDelete)
-    a.push(arr[i]);}
-    return a;
-
+  
+    var arr = todos.filter(function(e) {
+      if (e.id !== idToDelete) {
+        return e;
+      }
+    });
+    return arr;
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
-    // var arr =  todos.map(x=>{
-    //   if(x['id']==idToMark)
-    //   x['done']=!x['done'];
-    //   return arr ; 
-
-    // })
-    // return arr ;
-    var arr =this.cloneArrayOfObjects(todos);
-    var i=0 ;
-
-    for(i;i<arr.length ;i++)
-    { if(arr[i]['id'] === idToMark) 
-    arr[i]['done'] = !(arr[i]['done']);
+  
+  
+    var arr = todos.map(function(e) {
+      if (e.id == idToMark) {
+        e.done = !e.done;
       }
-          return arr; 
-    
-
+      return e;
+    });
+    return arr;
 
 
   },
@@ -76,13 +67,8 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sorta
     var arr =this.cloneArrayOfObjects(todos);
-    // function strcmp(a, b)
-    // {   
-    // return (a<b?-1:(a>b?1:0));  
-    // }
+  
     arr.sort(sortFunction);
-
-    // arr.sort(function(a, b){return strcmp(a['description'],b['description'])});
     return arr ;
 
   },

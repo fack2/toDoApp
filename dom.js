@@ -3,8 +3,8 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
   // This is the dom node where we will keep our todo
-  var container = document.getElementById("todo-container");
-  var container2 = document.getElementById("markTodo-container");
+  var uncompletedToDos = document.getElementById("todo-container");
+  var completedToDos= document.getElementById("markTodo-container");
   var addTodoForm = document.getElementById("add-todo");
   var sortList = document.getElementById("sortList");
   var sortListID = document.getElementById("sortListID");
@@ -20,7 +20,11 @@
     console.log(todo["done"]);
 
     var todoNode = document.createElement("li");
-    todoNode.innerHTML = "<span>" + todo.description + "</span>";
+    //todoNode.innerHTML = "<span>" + todo.description + "</span>";
+    var spannode = document.createElement("span"); 
+    spannode.textContent=todo.description;
+    todoNode.appendChild(spannode);
+
     // todoNode.innerHTML=todo.description;
 
     // you will need to use addEventListener
@@ -42,7 +46,7 @@
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
     markTodoButtonNode.name="markTodoButton"
-    markTodoButtonNode.setAttribute("aria-label","eshi")
+    markTodoButtonNode.setAttribute("aria-label","mark Todo Button")
 
     if (todo["done"] == false) {
       //  markTodoButtonNode.innerHTML = "markTodo";
@@ -68,18 +72,10 @@
       return a["description"] > b["description"] ? 1 : -1;
     });
 
-    // sortListID.addEventListener("click", function(event) {
-    //   event.preventDefault();
-    //   // var sortFunction=
-    //   var newState = todoFunctions.sortTodos(state, function(a, b) {
-    //     return a["id"] > b["id"] ? 1 : -1;
-    //   });
+    
     update(newState);
 
-    // console.log(ll);
-    // console.log(state[0]['description']+"000"+ll[0]['description']);
-    // console.log(state[0]['description']<ll[1]['description']);
-    // console.log(state);
+   
   });
 
   sortListID.addEventListener("click", function(event) {
@@ -91,37 +87,27 @@
 
     update(newState);
 
-    // console.log(ll);
-    // console.log(state[0]['description']+"000"+ll[0]['description']);
-    // console.log(state[0]['description']<ll[1]['description']);
-    // console.log(state);
+    
   });
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
-      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
-      // what is inside event.target?
-
-      //var description = '?'; //  ....
+    
       event.preventDefault();
       var desc = document.getElementById("todo").value;
-      event.target;
-      // hint: todoFunctions.addTodo
-
-      // var newState = []; // ?? change this!
-      // update(newState);
+      if(desc != '')
+     { event.target;
+     
       var newState = todoFunctions.addTodo(state, {
         id: todoFunctions.generateId(),
         description: desc,
         done: false
       });
       console.log(newState);
-      update(newState);
+      update(newState); }
     });
   }
 
-  // you should not need to change this function
   var update = function(newState) {
     state = newState;
     renderState(state);
@@ -138,10 +124,10 @@
     });
 
     // you may want to add a class for css
-    container.replaceChild(todoListNode, container.firstChild);
-    container2.replaceChild(markedListNode, container2.firstChild);
+    uncompletedToDos.replaceChild(todoListNode, uncompletedToDos.firstChild);
+    completedToDos.replaceChild(markedListNode, completedToDos.firstChild);
   };
 
-  if (container) renderState(state);
-  if (container2) renderState(state);
+  if (uncompletedToDos) renderState(state);
+  if (completedToDos) renderState(state);
 })();

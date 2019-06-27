@@ -4,7 +4,7 @@ button {
   margin-right: 10px;
   float: right;
   width: 50px;
-  color: #fff !important;
+  color: #fff;
   text-transform: uppercase;
   background: #484f4f;
   border-radius: 50px;
@@ -39,8 +39,7 @@ header {
   height: 350px;
   background-size: cover;
   background-repeat: no-repeat;
-  /* width: 100%;
-  z-index: 0; */
+  
 }
 html {
   background-color: #f0efef;
@@ -57,29 +56,26 @@ form {
   margin-left: 25%;
 }
 
-/* input {
-  width: 500px;
-} */
+
 label{
   font-size: 20px;
 }
-#todo {
+.todo {
   width: 300px;
   height: 50px;
   padding-left: 10px;
 }
-#add {
+.add {
   width: 100px;
   height: 56px;
   font-size: 25px;
   border-radius: 5px;
-  /* float: left; */
-  margin-right: 55%;
+  margin-top: 1%;
+ float: none; 
 }
 
 span {
   width: 200px;
-  /* margin-right: 10px; */
   font-size: 25px;
   font-weight: bold;
 }
@@ -103,7 +99,7 @@ div {
 
 .head {
   text-decoration: underline;
-  -webkit-text-decoration-color: #ccccb3; /* Safari */
+  -webkit-text-decoration-color: #ccccb3; 
   text-decoration-color: #ccccb3;
   font-size: 50px;
   margin: 2%;
@@ -114,7 +110,7 @@ div {
   margin-top: 57px;
   margin-bottom: 18px;
 }
-.div1 {
+.sort-buttons {
   margin-top: 10px;
   margin-left: 25%;
   width: auto;

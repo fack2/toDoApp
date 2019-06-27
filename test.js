@@ -19,9 +19,9 @@ test('Example test', function(t) {
   { id: -2, description: 'second todo' ,done:false},
   { id: -1, description: 'third todo' ,done:false},
   { id: -4, description: 'first todo' ,done:false}] ;
-  console.log(actual+"0000000\n");
-  console.log(expected+"0000000\n");
-  t.deepEqual(actual,expected,"xd");
+  console.log(actual+"actual\n");
+  console.log(expected+"expected\n");
+  t.deepEqual(actual,expected,"the item should add to the list");
   t.end();
 
  })
@@ -39,9 +39,9 @@ test('Example test', function(t) {
  { id: -2, description: 'second todo',done:false },
  { id: -1, description: 'third todo' ,done:false},
  ] ;
- console.log(actual+"0000000\n");
- console.log(expected+"0000000\n");
- t.deepEqual(actual,expected,"xd");
+ console.log(actual+"actual\n");
+ console.log(expected+"expected\n");
+ t.deepEqual(actual,expected,"the to do item should deleted");
  t.end();
 
 })
@@ -59,22 +59,22 @@ test('   mark todo item ', function(t){
  { id: -2, description: 'second todo',done:false },
  { id: -1, description: 'third todo' ,done:false},
  ] ;
- console.log(actual+"0000000\n");
- console.log(expected+"0000000\n");
- t.deepEqual(actual,expected,"xd");
+ console.log(actual+"actual\n");
+ console.log(expected+"expected\n");
+ t.deepEqual(actual,expected,"the to do item should be mark");
  t.end();
 
 })
 
 
 test('sortTodos', function(t) {
-  var a = [ 
+  var arr = [ 
     { id: -1, description: 'third todo', done:true },
     { id: -2, description: 'second todo', done:true },
     { id:  0, description: 'zero todo', done:false },
   ];
-  var v=logic.sortTodos(a,function(a, b){return a['description'] > b['description']});
-  var b = [ 
+  var actual=logic.sortTodos(arr,function(a, b){return a['description'] > b['description']});
+  var expected = [ 
     
     { id: -2, description: 'second todo', done:true },
     { id: -1, description: 'third todo', done:true },
@@ -83,7 +83,7 @@ test('sortTodos', function(t) {
  console.log(a[0]['description']+"\n");
   console.log(b[0]['description']+"\n");
   console.log(v[0]['description']+"\n");
-  t.deepEqual(v,b,"33333333333sortTodos");  
+  t.deepEqual(actual,expected,"the to do list should be sort");  
  
   t.end();
 });
